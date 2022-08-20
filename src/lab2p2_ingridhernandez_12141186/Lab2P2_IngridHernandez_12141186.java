@@ -44,7 +44,7 @@ public class Lab2P2_IngridHernandez_12141186 {
                     ArrayList<Integer> CE = new ArrayList();//CE=La Edad del Cliente
                     ArrayList<String> CID = new ArrayList();//CID=El ID del Cliente
                     ArrayList<Double> CS = new ArrayList();//CS=El sueldo del Cliente
-                    ArrayList<Integer> dueno = new ArrayList();//D=dueño
+                    ArrayList<Integer> D = new ArrayList();//D=dueño
                     System.out.println("============ Menu Principal ===============");
                     System.out.println("1) Clientes");
                     System.out.println("2) Empleados");
@@ -62,9 +62,9 @@ public class Lab2P2_IngridHernandez_12141186 {
                                 System.out.println("========Menus de Clientes===========");
                                 System.out.println("1)Crear Clientes");
                                 System.out.println("2)Listar Clientes");
-                                System.out.println("3)Listar carros por cliente");
-                                System.out.println("4)Modificar Clientes");
-                                System.out.println("5)Eliminar Clientes");
+                                System.out.println("3)Modificar Clientes");
+                                System.out.println("4)Eliminar Clientes");
+                                System.out.println("5)Listar carros por Cliente");
                                 System.out.println("6)Regresar al menu principal");
                                 System.out.println("====================================");
                                 System.out.print("Ingrese la opcion:");
@@ -93,18 +93,75 @@ public class Lab2P2_IngridHernandez_12141186 {
                                         break;
                                     case 2:
                                        for (int i = 0; i < CN.size(); i++) {
-                                            System.out.println("Nombre es : " + CN.get(i) + " - La Edad es: " + CE.get(i) + " - El numero de ID es: " + CID.get(i) + " - Monto es: " + CS.get(i));
+                                            System.out.println("Nombre es : " + CN.get(i) + " /La Edad es: " + CE.get(i) + " /El numero de ID es: " + CID.get(i) + " /Monto es: " + CS.get(i));
                                         }
                                         break;
                                     case 3:
-
+                                          System.out.println("Eliga al cliente que desea Modificar: ");
+                                        for (int i = 0; i < CN.size(); i++) {
+                                            System.out.println(i + ") " + CN.get(i));
+                                        }
+                                        System.out.println("Ingrese el numero de la Posicion del Cliente:");
+                                        int pos = lea.nextInt();
+                                        System.out.println("Que Desea Modificar del Cliente :\n1.Nombre\n2.Edad\n3.ID\n4.Saldo\nIngrese una opcion :");
+                                        int modC = lea.nextInt();
+                                        if (modC == 1) {
+                                            System.out.println("Ingrese el nuevo nombre del Cliente: ");
+                                            String nom = lea.nextLine();
+                                            nom = lea.next();
+                                            CN.remove(pos);
+                                            CN.add(pos, nom);
+                                            System.out.println("El Nombre ya sido modifico ");
+                                        }
+                                        if (modC == 2) {
+                                            System.out.println("Ingrese la nueva edad del Cliente:");
+                                            int ed = lea.nextInt();
+                                            CE.remove(pos);
+                                            CE.add(pos, ed);
+                                            System.out.println("La Edad ya sido modifico");
+                                        }
+                                        if (modC == 3) {
+                                            System.out.println("Ingrese el nuevo ID del Cliente");
+                                            String n_Id = lea.nextLine();
+                                            n_Id = lea.next();
+                                            CID.remove(pos);
+                                            CID.add(pos, n_Id);
+                                            System.out.println("El ID ya sido modifico");
+                                        }
+                                        if (modC == 4) {
+                                            System.out.println("Ingrese el nuevo sueldo a pagar del Cliente:");
+                                            double n_monto = lea.nextInt();
+                                            CS.remove(pos);
+                                            CS.add(pos, n_monto);
+                                            System.out.println("El Monto ya sido modifico");
+                                        }
                                         break;
                                     case 4:
-
+                                        System.out.println("Eliga al cliente que desea Eliminar: ");
+                                        for (int i = 0; i < CN.size(); i++) {
+                                            System.out.println(i + ") " + CN.get(i));
+                                        }
+                                        System.out.println("Ingrese el numero de la Posicion del Cliente:");
+                                        int pos1 = lea.nextInt();
+                                        CN.remove(pos1);
+                                        CE.remove(pos1);
+                                        CID.remove(pos1);
+                                        CS.remove(pos1);
+                                        System.out.println("El Cliente Ha Sido Eliminado ");
                                         break;
                                     case 5:
-
-                                        break;
+                                         System.out.println("Escoga el numero del cliente del que desea listar los autos: ");
+                                        for (int i = 0; i < CN.size(); i++) {
+                                            System.out.println(i + ") " + CN.get(i));
+                                        }
+                                        int p3 = lea.nextInt();
+                                        System.out.println("Los autos de este cliente son: ");
+                                        for (int m = 0; m < D.size(); m++) {
+                                            if (p3 == D.indexOf(m)) {
+                                                System.out.println("1)-");
+                                            }
+                                        }
+                                      break;
                                     case 6:
 
                                         centinela2 = false;
