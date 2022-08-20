@@ -55,7 +55,7 @@ public class Lab2P2_IngridHernandez_12141186 {
                     int opcion = lea.nextInt();
                     System.out.println("====================================");
                     switch (opcion) {
-                        case 1: {
+                        case 1: 
                             Clientes cl = new Clientes();
                             boolean centinela2 = true;
                             while (centinela2 == true) {
@@ -99,13 +99,13 @@ public class Lab2P2_IngridHernandez_12141186 {
                                     case 3:
                                           System.out.println("Eliga al cliente que desea Modificar: ");
                                         for (int i = 0; i < CN.size(); i++) {
-                                            System.out.println(i + ") " + CN.get(i));
+                                            System.out.println("la Posiciones es: " + i + ") " + CN.get(i));
                                         }
                                         System.out.println("Ingrese el numero de la Posicion del Cliente:");
                                         int pos = lea.nextInt();
                                         System.out.println("Que Desea Modificar del Cliente :\n1.Nombre\n2.Edad\n3.ID\n4.Saldo\nIngrese una opcion :");
-                                        int modC = lea.nextInt();
-                                        if (modC == 1) {
+                                        int Mc = lea.nextInt();
+                                        if (Mc == 1) {
                                             System.out.println("Ingrese el nuevo nombre del Cliente: ");
                                             String nom = lea.nextLine();
                                             nom = lea.next();
@@ -113,14 +113,14 @@ public class Lab2P2_IngridHernandez_12141186 {
                                             CN.add(pos, nom);
                                             System.out.println("El Nombre ya sido modifico ");
                                         }
-                                        if (modC == 2) {
+                                        if (Mc == 2) {
                                             System.out.println("Ingrese la nueva edad del Cliente:");
                                             int ed = lea.nextInt();
                                             CE.remove(pos);
                                             CE.add(pos, ed);
                                             System.out.println("La Edad ya sido modifico");
                                         }
-                                        if (modC == 3) {
+                                        if (Mc == 3) {
                                             System.out.println("Ingrese el nuevo ID del Cliente");
                                             String n_Id = lea.nextLine();
                                             n_Id = lea.next();
@@ -128,7 +128,7 @@ public class Lab2P2_IngridHernandez_12141186 {
                                             CID.add(pos, n_Id);
                                             System.out.println("El ID ya sido modifico");
                                         }
-                                        if (modC == 4) {
+                                        if (Mc == 4) {
                                             System.out.println("Ingrese el nuevo sueldo a pagar del Cliente:");
                                             double n_monto = lea.nextInt();
                                             CS.remove(pos);
@@ -139,7 +139,7 @@ public class Lab2P2_IngridHernandez_12141186 {
                                     case 4:
                                         System.out.println("Eliga al cliente que desea Eliminar: ");
                                         for (int i = 0; i < CN.size(); i++) {
-                                            System.out.println(i + ") " + CN.get(i));
+                                            System.out.println("la Posiciones es: " + i + ") " + CN.get(i));
                                         }
                                         System.out.println("Ingrese el numero de la Posicion del Cliente:");
                                         int pos1 = lea.nextInt();
@@ -152,7 +152,7 @@ public class Lab2P2_IngridHernandez_12141186 {
                                     case 5:
                                          System.out.println("Escoga el numero del cliente del que desea listar los autos: ");
                                         for (int i = 0; i < CN.size(); i++) {
-                                            System.out.println(i + ") " + CN.get(i));
+                                            System.out.println("la Posiciones es: " + i + ") " + CN.get(i));
                                         }
                                         int p3 = lea.nextInt();
                                         System.out.println("Los autos de este cliente son: ");
@@ -170,9 +170,18 @@ public class Lab2P2_IngridHernandez_12141186 {
                                 }
 
                             }
-                        }//fin del case 1
+                        
                         break;
-                        case 2: {
+                        case 2: 
+                            ArrayList<String> Emp_N = new ArrayList();//nombre
+                            ArrayList<Integer> Emp_E = new ArrayList();//edad
+                            ArrayList<Double> Emp_S = new ArrayList();//sueldo
+                            ArrayList<String> Emp_RRHH = new ArrayList();//RRHH
+                            ArrayList<String> estado_Emp = new ArrayList();//estado
+                            ArrayList<String> Emp = new ArrayList();//empleado
+                            estado_Emp.add(0, "Esta Trabajando");
+                            estado_Emp.add(1, "No Esta Trabajando en este momento");
+                            Empleados empl = new Empleados();
                             boolean centinela3 = true;
                             while (centinela3 == true) {
                                 System.out.println("===========Menus de Empleados============");
@@ -183,35 +192,124 @@ public class Lab2P2_IngridHernandez_12141186 {
                                 System.out.println("5)Estado de Trabajos de los Empleados");
                                 System.out.println("6)Regresar al menu principal");
                                 System.out.println("=========================================");
-                                System.out.println("Ingrese la opcion:");
+                                System.out.print("Ingrese la opcion:");
                                 int opc3 = lea.nextInt();
                                 System.out.println("=========================================");
-                                switch (opc3) {
-                                    case 1:
+                                if (opc3 == 1) {
+                                    System.out.println("Ingrese el nombre del empleado:");
+                                    String nombree = lea.nextLine();
+                                    nombree = lea.next();
+                                    empl.setNombre(nombree);
+                                    Emp_N.add(nombree);//
+                                    System.out.println("Ingrese la edad del empleado:");
+                                    int edade = lea.nextInt();
+                                   empl.setEdad(edade);
+                                    Emp_E.add(edade);
+                                    System.out.println("Ingrese el RRHH del empleado:");
+                                    String rrhh = lea.next();
+                                    empl.setRRHH(rrhh);
+                                    Emp_RRHH.add(rrhh);
+                                    System.out.println("Ingrese el sueldo del empleado:");
+                                    double sueldo = lea.nextDouble();
+                                    empl.setSueldo(sueldo);
+                                    Emp_S.add(sueldo);
+                                    System.out.println("Eliga el estado de trabajo del empleado:\n0.Esta Trabajando\n1.No Esta Trabajando en este momento");
+                                    int pes = lea.nextInt();
+                                    if (pes == 0) {
+                                        Emp.add(estado_Emp.get(pes));
 
-                                        break;
-                                    case 2:
-
-                                        break;
-                                    case 3:
-
-                                        break;
-                                    case 4:
-
-                                        break;
-                                    case 5:
-
-                                        break;
-                                    case 6:
-
-                                        centinela3 = false;
-                                        break;
+                                    } else if (pes == 1) {
+                                        Emp.add(estado_Emp.get(pes));
+                                    }
 
                                 }
-                            }
-                        }//fin del case 2
+                                if (opc3 == 2) {
+                                    int cont4 = 0;
+                                    for (int i = 0; i < Emp_N.size(); i++) {
+                                        System.out.println("Nombre del empleado es: " + Emp_N.get(i)+ " /Edad es de: " + Emp_E.get(i) + " /RRHH es: " + Emp_RRHH.get(i)+ " /Sueldo es de:  " + Emp_S.get(i) + " /Estado: " + Emp.get(i));
+                                    }
+                                    }
+                                if (opc3 == 3) {
+                                    System.out.println("Eligir el empleado que desea Modificar: ");
+                                    for (int i = 0; i < Emp_N.size(); i++) {
+                                        System.out.println(i + ") " + Emp_N.get(i));
+                                    }
+                                    System.out.println("Ingrese el numero del Empleado::");
+                                    int pos = lea.nextInt();
+                                    System.out.println("Desea modificar al empleado :\n1.Nombre\n2.Edad\n3.RRHH\n4.Sueldo\nIngrese la opcion:");
+                                    int opcio = lea.nextInt();
+                                    if (opcio == 1) {
+                                        System.out.println("Ingrese el nuevo nombre del Empleado: ");
+                                        String nn = lea.nextLine();
+                                        nn = lea.next();
+                                        Emp_N.remove(pos);
+                                        Emp_N.add(pos, nn);
+                                        System.out.println("El Nombre del empleado Ha Sido Modificado");
+                                    }
+                                    if (opcio == 2) {
+                                        System.out.println("Ingrese la nueva edad del Empleado: ");
+                                        int n_edad = lea.nextInt();
+                                        CE.remove(pos);
+                                        CE.add(pos, n_edad);
+                                        System.out.println("La Edad del Empleado Ha Sido Modificado");
+                                    }
+                                    if (opcio == 3) {
+                                        System.out.println("Ingrese el nuevo RRHH del empleado: ");
+                                        String n_rrhh = lea.nextLine();
+                                        n_rrhh = lea.next();
+                                        Emp_RRHH.remove(pos);
+                                        Emp_RRHH.add(pos, n_rrhh);
+                                        System.out.println("El ID Ha Sido Modificado");
+                                    }
+                                    if (opcio == 4) {
+                                        System.out.println("Ingrese el nuevo sueldo del empleado: ");
+                                        double n_s = lea.nextInt();
+                                        Emp_S.remove(pos);
+                                        Emp_S.add(pos, n_s);
+                                        System.out.println("El Sueldo Ha Sido Modificado");
+                                    }
+                                    
+                                }
+                                if (opc3 == 4) {
+                                    System.out.println("Eliga el Empleado que desea eliminar: ");
+                                    for (int i = 0; i < Emp_N.size(); i++) {
+                                        System.out.println(i + ") " + Emp_N.get(i));
+                                    }
+                                    System.out.println("Ingrese la posocion del empelado:");
+                                    int pos = lea.nextInt();
+                                    Emp_N.remove(pos);
+                                    Emp_E.remove(pos);
+                                    Emp_RRHH.remove(pos);
+                                    Emp_S.remove(pos);
+                                    System.out.println("El Empleado Ha Sido Eliminado");
+                                }
+                                if (opc3 == 5) {
+                                    System.out.println("Eliga el Empleado que desea cambiar de estado: ");
+                                    for (int i = 0; i < Emp_N.size(); i++) {
+                                        System.out.println(i + ") " + Emp_N.get(i));
+                                    }
+                                    System.out.println("Ingrese la posocion del empelado:");
+                                    int pos = lea.nextInt();
+                                    System.out.println("Estado actual del empleado es: "+ Emp.get(pos)+" RRHH es: " + Emp_RRHH.get(pos) );
+                                    if (Emp.get(pos).indexOf(pos) == 0) {
+                                        Emp.remove(0);
+                                        Emp.add(estado_Emp.get(1));
+                                    }
+                                    if (Emp.get(pos).indexOf(pos) == 1) {
+                                        Emp.remove(1);
+                                        Emp.add(estado_Emp.get(0));
+                                    }
+                                    System.out.println("El Estado del Empleado Ha Sido Cambiado");
+                                }
+                                if (opc3 == 6) {
+                                    centinela3= false;
+                                }
+                              }
+                            
+                        
                         break;
                         case 3: {
+                            
                             boolean centinela4 = true;
                             while (centinela4 == true) {
                                 System.out.println("=============Menus de Carros=============");
@@ -223,21 +321,20 @@ public class Lab2P2_IngridHernandez_12141186 {
                                 System.out.println("Ingrese la opcion:");
                                 int opc4 = lea.nextInt();
                                 System.out.println("==========================================");
-                                switch (opc4) {
-                                    case 1:
-
-                                        break;
-                                    case 2:
-
-                                        break;
-                                    case 3:
-
-                                        break;
-
-                                    case 4:
-
-                                        centinela4 = false;
-                                        break;
+                                if(opc4==1){
+                                        
+                                        
+                                    }
+                                    if(opc4==2){
+                                        
+                                        
+                                    }
+                                    if(opc4==3){
+                                        
+                                        
+                                    }
+                                   if (opc4 == 4) {
+                                   centinela4 = false;
                                 }
                             }
                 }//fin del case 3
