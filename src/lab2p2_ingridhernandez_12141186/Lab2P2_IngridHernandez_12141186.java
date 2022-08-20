@@ -5,6 +5,7 @@
  */
 package lab2p2_ingridhernandez_12141186;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -38,6 +39,12 @@ public class Lab2P2_IngridHernandez_12141186 {
             if (contra.equals("admin1234") && usuario.equalsIgnoreCase("admin")) {
                 boolean centinela1 = true;
                 while (centinela1 == true) {
+                    ArrayList listaC = new ArrayList();
+                    ArrayList<String> CN = new ArrayList();//CN = cliente Nombre
+                    ArrayList<Integer> CE = new ArrayList();//CE=La Edad del Cliente
+                    ArrayList<String> CID = new ArrayList();//CID=El ID del Cliente
+                    ArrayList<Double> CS = new ArrayList();//CS=El sueldo del Cliente
+                    ArrayList<Integer> dueno = new ArrayList();//D=dueño
                     System.out.println("===============Menu=================");
                     System.out.println("1. Clientes");
                     System.out.println("2. Empleados");
@@ -47,6 +54,7 @@ public class Lab2P2_IngridHernandez_12141186 {
                     int opcion = lea.nextInt();
                     switch (opcion) {
                         case 1: {
+                            Clientes cl = new Clientes();
                             boolean centinela2 = true;
                             while (centinela2 == true) {
                                 System.out.println("========Menus de Clientes===========");
@@ -61,6 +69,24 @@ public class Lab2P2_IngridHernandez_12141186 {
                                 int opcion2 = lea.nextInt();
                                 switch (opcion2) {
                                     case 1:
+                                        System.out.println("Ingrese El Nombre del Cliente:");
+                                        String nombre = lea.nextLine();
+                                        nombre = lea.next();
+                                        cl.setNombre(nombre);
+                                        CN.add(nombre);
+                                        System.out.println("Ingrese la edad del Cliente: ");
+                                        int edad = lea.nextInt();
+                                        cl.setEdad(edad);
+                                        CE.add(edad);
+                                        System.out.println("Ingrese el Id[Identidad] del Cliente: ");
+                                        String id = lea.nextLine();
+                                        id = lea.next();
+                                        cl.setID(id);
+                                        CID.add(id);
+                                        System.out.println("Ingrese el Monto a pagar por el Cliente: ");
+                                        double sueldo = lea.nextDouble();
+                                        cl.setSaldo(sueldo);
+                                        CS.add(sueldo);
 
                                         break;
                                     case 2:
@@ -98,13 +124,35 @@ public class Lab2P2_IngridHernandez_12141186 {
                                 System.out.println("Ingrese la opcion:");
                                 System.out.println("====================================");
                                 int opc3 = lea.nextInt();
+                                switch (opc3) {
+                                    case 1:
+
+                                        break;
+                                    case 2:
+
+                                        break;
+                                    case 3:
+
+                                        break;
+                                    case 4:
+
+                                        break;
+                                    case 5:
+
+                                        break;
+                                    case 6:
+
+                                        centinela3 = false;
+                                        break;
+
+                                }
                             }
-                }//fin del case 2
-                break;
-                case 3:{
-                    boolean centinale4 = true;
-                            while (centinale4 == true) {
-                                 System.out.println("=============Menus de Carros=============");
+                        }//fin del case 2
+                        break;
+                        case 3: {
+                            boolean centinela4 = true;
+                            while (centinela4 == true) {
+                                System.out.println("=============Menus de Carros=============");
                                 System.out.println("1)Añadir Carros al sistema");
                                 System.out.println("2)Listar carro");
                                 System.out.println("3)Modificar su estado de reparacion");
@@ -112,6 +160,22 @@ public class Lab2P2_IngridHernandez_12141186 {
                                 System.out.println("Ingrese la opcion:");
                                 System.out.println("==========================================");
                                 int opc4 = lea.nextInt();
+                                switch (opc4) {
+                                    case 1:
+
+                                        break;
+                                    case 2:
+
+                                        break;
+                                    case 3:
+
+                                        break;
+
+                                    case 4:
+
+                                        centinela4 = false;
+                                        break;
+                                }
                             }
                 }//fin del case 3
                 break;
