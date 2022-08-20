@@ -45,13 +45,15 @@ public class Lab2P2_IngridHernandez_12141186 {
                     ArrayList<String> CID = new ArrayList();//CID=El ID del Cliente
                     ArrayList<Double> CS = new ArrayList();//CS=El sueldo del Cliente
                     ArrayList<Integer> dueno = new ArrayList();//D=dueño
-                    System.out.println("===============Menu=================");
-                    System.out.println("1. Clientes");
-                    System.out.println("2. Empleados");
-                    System.out.println("3. Automoviles");
-                    System.out.println("4. Regresar a inicio de sesion");
+                    System.out.println("============ Menu Principal ===============");
+                    System.out.println("1) Clientes");
+                    System.out.println("2) Empleados");
+                    System.out.println("3) Automoviles");
+                    System.out.println("4) Regresar a sesion principal");
                     System.out.println("===================================");
+                    System.out.print("Ingrese la opcion:");
                     int opcion = lea.nextInt();
+                    System.out.println("====================================");
                     switch (opcion) {
                         case 1: {
                             Clientes cl = new Clientes();
@@ -64,9 +66,10 @@ public class Lab2P2_IngridHernandez_12141186 {
                                 System.out.println("4)Modificar Clientes");
                                 System.out.println("5)Eliminar Clientes");
                                 System.out.println("6)Regresar al menu principal");
-                                System.out.println("Ingrese la opcion:");
                                 System.out.println("====================================");
+                                System.out.print("Ingrese la opcion:");
                                 int opcion2 = lea.nextInt();
+                                System.out.println("====================================");
                                 switch (opcion2) {
                                     case 1:
                                         System.out.println("Ingrese El Nombre del Cliente:");
@@ -87,10 +90,11 @@ public class Lab2P2_IngridHernandez_12141186 {
                                         double sueldo = lea.nextDouble();
                                         cl.setSaldo(sueldo);
                                         CS.add(sueldo);
-
                                         break;
                                     case 2:
-
+                                       for (int i = 0; i < CN.size(); i++) {
+                                            System.out.println("Nombre es : " + CN.get(i) + " - La Edad es: " + CE.get(i) + " - El numero de ID es: " + CID.get(i) + " - Monto es: " + CS.get(i));
+                                        }
                                         break;
                                     case 3:
 
@@ -114,16 +118,17 @@ public class Lab2P2_IngridHernandez_12141186 {
                         case 2: {
                             boolean centinela3 = true;
                             while (centinela3 == true) {
-                                System.out.println("========Menus de Empleados===========");
+                                System.out.println("===========Menus de Empleados============");
                                 System.out.println("1)Crear Empleados");
                                 System.out.println("2)Listar Empleados");
                                 System.out.println("3)Modificar Empleados");
                                 System.out.println("4)Eliminar Empleados");
                                 System.out.println("5)Estado de Trabajos de los Empleados");
                                 System.out.println("6)Regresar al menu principal");
+                                System.out.println("=========================================");
                                 System.out.println("Ingrese la opcion:");
-                                System.out.println("====================================");
                                 int opc3 = lea.nextInt();
+                                System.out.println("=========================================");
                                 switch (opc3) {
                                     case 1:
 
@@ -157,9 +162,10 @@ public class Lab2P2_IngridHernandez_12141186 {
                                 System.out.println("2)Listar carro");
                                 System.out.println("3)Modificar su estado de reparacion");
                                 System.out.println("4)Regresar al menu principal");
-                                System.out.println("Ingrese la opcion:");
                                 System.out.println("==========================================");
+                                System.out.println("Ingrese la opcion:");
                                 int opc4 = lea.nextInt();
+                                System.out.println("==========================================");
                                 switch (opc4) {
                                     case 1:
 
