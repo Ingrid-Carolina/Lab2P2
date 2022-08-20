@@ -317,13 +317,12 @@ public class Lab2P2_IngridHernandez_12141186 {
 
                             break;
                         case 3:
-                            
-                            
+
                             ArrayList<String> marca_carros = new ArrayList();
                             ArrayList<String> modelo_carros = new ArrayList();
                             ArrayList<Integer> año = new ArrayList();
                             ArrayList<String> fecha_Car = new ArrayList();
-                          ArrayList<String> estado_Car = new ArrayList();
+                            ArrayList<String> estado_Car = new ArrayList();
                             ArrayList<String> estado_Repa = new ArrayList();
                             Carros Car = new Carros();
                             estado_Car.add(0, "En espera de entrar a reparacion");
@@ -391,7 +390,7 @@ public class Lab2P2_IngridHernandez_12141186 {
                                     System.out.println("Se ha añadido Carro");
                                 }
                                 if (opc4 == 2) {
-                                   for (int i = 0; i < marca_carros.size(); i++) {
+                                    for (int i = 0; i < marca_carros.size(); i++) {
                                         System.out.println("Marca del Carro: " + marca_carros.get(i) + "/ Dueño es : " + D.get(i));
                                     }
 
@@ -417,7 +416,7 @@ public class Lab2P2_IngridHernandez_12141186 {
                                     } else {
                                         System.out.println("No se pudo Cambiar el estado del Carro");
                                     }
-                                    if (rep== 2 && estado_Repa.equals(Car.getEstado().get(2))) {
+                                    if (rep == 2 && estado_Repa.equals(Car.getEstado().get(2))) {
                                         estado_Repa.add(pos1, Car.getEstado().get(rep));
                                     } else {
                                         System.out.println("No se pudo Cambiar el estado del Carro");
@@ -443,7 +442,6 @@ public class Lab2P2_IngridHernandez_12141186 {
                                         System.out.println("No se pudo Cambiar el estado del Carro");
                                     }
 
-                                    
                                 }
 
                                 if (opc4 == 4) {
