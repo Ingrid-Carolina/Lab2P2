@@ -16,20 +16,18 @@ public class Carros {
     private String modelo;
     private int ano;
     private String fecha;
-    private ArrayList<String>Estado;
-    private ArrayList<String>dueno;
+    private ArrayList<String>Estado = new ArrayList();
+    private ArrayList<String>dueno = new ArrayList();
     private double costo;
 
     public Carros() {
     }
 
-    public Carros(String marca, String modelo, int ano, String fecha, ArrayList<String> Estado, ArrayList<String> dueno, double costo) {
+    public Carros(String marca, String modelo, int ano, String fecha, double costo) {
         this.marca = marca;
         this.modelo = modelo;
         this.ano = ano;
         this.fecha = fecha;
-        this.Estado = Estado;
-        this.dueno = dueno;
         this.costo = costo;
     }
 
@@ -88,6 +86,8 @@ public class Carros {
     public void setCosto(double costo) {
         this.costo = costo;
     }
+
+   
     
     
 }
